@@ -1,0 +1,18 @@
+##Creative tab
+itemGroup.forestryaddons=Forestry Addons
+
+##Circuits
+for.circuit.farmWeeder=Yard
+
+##Blocks
+tile.forestryaddons.farmweeder.name=Farm Weeder
+
+##Backpacks
+item.forestryaddons.backpack.redstone.normal.name=Redstoner's Backpack
+item.forestryaddons.backpack.redstone.woven.name=Woven Redstoner's Backpack
+item.forestryaddons.backpack.electrician.normal.name=Electrician's Backpack
+item.forestryaddons.backpack.electrician.woven.name=Woven Electrician's Backpack
+item.forestryaddons.backpack.fluid.normal.name=Hydrolic Engineer's Backpack
+item.forestryaddons.backpack.fluid.woven.name=Woven Hydrolic Engineer's Backpack
+item.forestryaddons.backpack.rail.normal.name=Railworker's Backpack
+item.forestryaddons.backpack.rail.woven.name=Woven Railworker's Backpack
