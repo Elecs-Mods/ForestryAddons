@@ -25,6 +25,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import java.awt.*;
@@ -68,8 +69,10 @@ public class BackPacks {
 		});
 
 		//Configuration
-
 		rail.rejectItem(new ItemStack(Items.BOAT));
+		electrician.acceptItem(new ItemStack(PluginCore.items.tubes, 1, OreDictionary.WILDCARD_VALUE));
+		electrician.acceptItem(new ItemStack(PluginCore.items.circuitboards, 1, OreDictionary.WILDCARD_VALUE));
+		electrician.acceptItem(new ItemStack(PluginCore.items.solderingIron, 1, OreDictionary.WILDCARD_VALUE));
 	}
 
 	@SubscribeEvent

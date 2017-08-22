@@ -16,7 +16,6 @@ import forestry.api.core.IErrorState;
 import forestry.api.multiblock.IFarmController;
 import forestry.core.PluginCore;
 import forestry.core.config.Constants;
-import forestry.core.render.TextureManager;
 import forestry.farming.blocks.BlockFarm;
 import forestry.farming.blocks.EnumFarmBlockType;
 import forestry.farming.circuits.CircuitFarmLogic;
@@ -164,7 +163,7 @@ public class WeedCrops {
 		@SideOnly(Side.CLIENT)
 		public void registerSprite() {
 			ResourceLocation location = new ResourceLocation(Constants.MOD_ID, "gui/errors/circuitMismatch");
-			texture = TextureManager.getInstance().registerGuiSprite(location);
+			texture = ForestryAPI.textureManager.registerGuiSprite(location);
 		}
 
 		@Override

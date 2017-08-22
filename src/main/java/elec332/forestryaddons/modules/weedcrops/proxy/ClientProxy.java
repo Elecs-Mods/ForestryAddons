@@ -3,7 +3,7 @@ package elec332.forestryaddons.modules.weedcrops.proxy;
 import elec332.forestryaddons.modules.weedcrops.WeedCrops;
 import elec332.forestryaddons.modules.weedcrops.client.ModelFarmWeeder;
 import forestry.core.models.BlockModelEntry;
-import forestry.core.proxy.Proxies;
+import forestry.core.models.ModelManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
@@ -21,7 +21,7 @@ public class ClientProxy extends CommonProxy {
 
 	@Override
 	public void registerModels() {
-		Proxies.render.registerBlockModel(new BlockModelEntry(LOC, new ModelResourceLocation("forestryaddons:farmweeder_broken", "inventory"), model = new ModelFarmWeeder(), null, false));
+		ModelManager.getInstance().registerCustomBlockModel(new BlockModelEntry(LOC, new ModelResourceLocation("forestryaddons:farmweeder_broken", "inventory"), model = new ModelFarmWeeder(), null, false));
 	}
 
 	@Override

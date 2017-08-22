@@ -26,6 +26,9 @@ public class RailcraftCompat {
 
 	@ElecModule.EventHandler
 	public void postInit(FMLPostInitializationEvent event) throws IllegalAccessException {
+		if (true){
+			return;
+		}
 		Fluid creosoteOil = Fluids.CREOSOTE.get();
 		if (creosoteOil == null){
 			return;

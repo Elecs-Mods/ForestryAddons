@@ -23,16 +23,22 @@ public class IC2Compat {
 
 	@ElecModule.EventHandler
 	public void init(FMLInitializationEvent event){
-		WeedCrops.instance.registerWeedHandler(new IC2WeedHandler());
+		if (WeedCrops.instance != null) {
+			WeedCrops.instance.registerWeedHandler(new IC2WeedHandler());
+		}
 	}
 
-	@SuppressWarnings("all")
 	@ElecModule.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		registerWeedHandlerRecipe();
 		ItemStack fertilizer = IC2Items.getItem("crop_res", "fertilizer");
 		int cyclesCompost = ForestryAPI.activeMode.getIntegerSetting("fermenter.cycles.compost");
 		int valueCompost = ForestryAPI.activeMode.getIntegerSetting("fermenter.value.compost");
 		FuelManager.fermenterFuel.put(fertilizer, new FermenterFuel(fertilizer, (cyclesCompost * 2) / 3, valueCompost / 2));
+	}
+
+	@SuppressWarnings("all")
+	private void registerWeedHandlerRecipe(){
 		if (WeedCrops.instance != null){
 			ItemStack weed_ex = ((IMultiItem) RegistryHelper.getItemRegistry().getObject(new ResourceLocation("ic2:fluid_cell"))).getItemStack(FluidName.weed_ex);
 			WeedCrops.instance.addWeederRecipe(weed_ex, new ItemStack(RegistryHelper.getItemRegistry().getObject(new ResourceLocation("ic2:weeding_trowel"))), null);

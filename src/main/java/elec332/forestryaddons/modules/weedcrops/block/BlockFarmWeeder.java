@@ -1,9 +1,8 @@
 package elec332.forestryaddons.modules.weedcrops.block;
 
+import elec332.core.compat.forestry.ForestryCompatHandler;
 import elec332.forestryaddons.ForestryAddons;
 import forestry.api.core.IModelManager;
-import forestry.core.blocks.propertys.UnlistedBlockAccess;
-import forestry.core.blocks.propertys.UnlistedBlockPos;
 import forestry.farming.PluginFarming;
 import forestry.farming.blocks.BlockFarm;
 import net.minecraft.block.properties.IProperty;
@@ -56,12 +55,12 @@ public class BlockFarmWeeder extends BlockFarm {
 
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new ExtendedBlockState(this, new IProperty[0], new IUnlistedProperty[]{UnlistedBlockPos.POS, UnlistedBlockAccess.BLOCKACCESS}){
+		return new ExtendedBlockState(this, new IProperty[0], new IUnlistedProperty[]{ForestryCompatHandler.UNLISTEDPOS_FORESTRY, ForestryCompatHandler.UNLISTEDIBA_FORESTRY}){
 
 			@Override
 			@Nonnull
 			public IBlockState getBaseState() {
-				return !init ? PluginFarming.blocks.farm.getDefaultState() : super.getBaseState();
+				return !init ? ForestryAddons.blocksFarming.farm.getDefaultState() : super.getBaseState();
 			}
 
 		};
